@@ -1,4 +1,4 @@
-node.js appointment manager API
+**Node.js appointment manager API**
 
 To install npm packages
 `npm install`
