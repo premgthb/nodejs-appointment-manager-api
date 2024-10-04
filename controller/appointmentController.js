@@ -6,11 +6,11 @@ const { validationResult } = require('express-validator')
 
 const generateSlots = date => {
   const slots = []
-  const startTime = moment(date).set({ hour: 9, minute: 0 })
-  const endTime = moment(date).set({ hour: 17, minute: 0 })
+  const startTime = moment(date).set({ hour: 9, minute: 0 }) // get start time from slot_config
+  const endTime = moment(date).set({ hour: 17, minute: 0 }) // get end time from slot_config
 
   while (startTime.isBefore(endTime)) {
-    const endSlot = moment(startTime).add(30, 'minutes')
+    const endSlot = moment(startTime).add(30, 'minutes') // get slot duration from slot_config
     slots.push({
       start_time: startTime.format('HH:mm'),
       end_time: endSlot.format('HH:mm'),
